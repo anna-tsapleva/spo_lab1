@@ -27,7 +27,7 @@ do
 		size=$(echo "$file" | awk -F " " '{print $5}')
 		lastModified=$(echo "$file" | awk -F " " '{print $7" "$6" "$8}')
 		length=""
-		if [ "$ext" = "avi" ] || [ "$ext" = "mp4" ] || [ "$ext" = "mp3" ]
+		if [[ "$ext" = "avi" ]] || [[ "$ext" = "mp4" ]] || [[ "$ext" = "mp3" ]]
 
 		then
 			length=$(mediainfo "$nameAndExt" --Output="General;%Duration/String%")
