@@ -30,7 +30,7 @@ do
 		if [[ "$ext" = "avi" ]] || [[ "$ext" = "mp4" ]] || [[ "$ext" = "mp3" ]]
 
 		then
-			length=$(mediainfo "$nameAndExt" --Output="General;%Duration/String%")
+			length=$(exiftool "$nameAndExt" | grep Duration | awk -F ' ' '{print $3$4}')
 		fi
 
 		resultForFile="$name,$size,$ext,$lastModified,$length"
