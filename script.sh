@@ -30,7 +30,7 @@ do
 		if [[ "$ext" == "avi" ]] || [[ "$ext" == "mp4" ]] || [[ "$ext" == "mp3" ]]
 
 		then
-			length=$(mediainfo "$nameAndExt" --Output="General;%Duration/String%")
+			length=$(mediainfo "$directory/$nameAndExt" --Output="General;%Duration/String%")
 		fi
 
 		resultForFile="$name,$size,$ext,$lastModified,$length"
